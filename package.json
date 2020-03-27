@@ -14,9 +14,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "node src/ts3.js",
-    "start": "NODE_ENV=production node src/ts3.js",
-    "vk": "BOT_TS3_HOST=51.79.6.79 BOT_TS3_QUERYPORT=10011 BOT_ID_SERVER=66 BOT_TS3_PASSWORD=SA8cvyMG BOT_TS3_BIGBOSSCHANNEL=5820 BOT_TS3_MIDBOSSCHANNEL=5821 BOT_TS3_MAPABOSSCHANNEL=5822 node src/ts3.js"
+    "dev": "node ts3.js",
+    "start": "NODE_ENV=production node ts3.js",
+    "vk": "BOT_TS3_HOST=51.79.6.79 BOT_TS3_QUERYPORT=10011 BOT_ID_SERVER=66 BOT_TS3_PASSWORD=SA8cvyMG BOT_TS3_BIGBOSSCHANNEL=5820 BOT_TS3_MIDBOSSCHANNEL=5821 BOT_TS3_MAPABOSSCHANNEL=5822 node ts3.js"
   },
   "author": "welton castro",
   "license": "ISC"
