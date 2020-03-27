@@ -6,7 +6,7 @@ const lion = require('./lion');
 //    border: "round"
 //});
 
-//const epicBoss = require('./func/epicBoss');
+const epicBoss = require('./func/epicBoss');
 const raidBoss = require('./func/raidBoss');
 
 (async () => {
@@ -15,8 +15,8 @@ const raidBoss = require('./func/raidBoss');
         //console.log('"'+element[0]+'",');
     //});
 
-    //const bigBossList = await new epicBoss(dados);
-    //console.log(bigBossList);
+    const bigBossList = await new epicBoss(dados);
+    console.log(bigBossList);
 
     const raidBossList = await new raidBoss(dados);
     console.log(raidBossList);

@@ -1,5 +1,5 @@
 const { Tablur } = require('tablur');
-const { parse, addHours, format } = require('date-fns');
+const { parse, addHours, format, differenceInMinutes } = require('date-fns');
 
 require('date-fns/locale/pt-BR');
 
@@ -38,9 +38,11 @@ module.exports = class {
                 const date = parse(boss[2], 'dd/MM/yyyy HH:mm', new Date());
                 const time = RaidBossList.filter(e => e[0] === boss[0]).map(a => a[1])[0];
 
-                return [...boss, format(addHours(date, time), 'dd/MM/yyyy HH:mm')];
+                const addtime = format(addHours(date, time), 'dd/MM/yyyy HH:mm');
+
+                return [...boss, addtime, "---> " + differenceInMinutes(parse(addtime, 'dd/MM/yyyy HH:mm', new Date()), new Date())];
             }
-            return [...boss, 'GOGO VIVO!'];
+            return [...boss, 'GOGO VIVO!', ''];
         });
 
         const bossIlive = raidBoss.filter((elem, i) => {
@@ -50,9 +52,11 @@ module.exports = class {
         const bossDead = raidBoss.filter((elem, i) => {
             return elem[3] !== 'GOGO VIVO!';
         }).sort((a, b) => {
-            var dateA = parse(a[2], 'dd/MM/yyyy HH:mm', new Date());
+            var dateA = parse(a[3], 'dd/MM/yyyy HH:mm', new Date());
             var dateB = parse(b[3], 'dd/MM/yyyy HH:mm', new Date());
-            return dateA - dateB;
+            if (dateA < dateB) return -1;
+            if (dateA > dateB) return 1;
+            return 0;
         });
 
         table.section('Epic Boss', 'center');
@@ -60,12 +64,12 @@ module.exports = class {
         table.break();
 
         [...bossIlive, ...bossDead].forEach((boss) => {
-            table.row([boss[0], boss[1], this.color(boss[2], '#fc0107'), this.color(boss[3], '#108040')]);
+            table.row([boss[0], boss[1], this.color(boss[2], '#fc0107'), this.color(boss[3], '#108040'), this.color(boss[4], '#000066')]);
         });
 
         return table.toString();
     }
     color(text, color) {
-        return '[COLOR=' + color + ']' + text + '[/COLOR]';
+        return  text !== '' ? '[COLOR=' + color + ']' + text + '[/COLOR]' : '';
     }
 };
