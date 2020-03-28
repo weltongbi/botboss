@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 3
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-l2cr-botbosslion
+  name: botbosslion
+  namespace: l2cr
+  resourceVersion: "26154577"
+  selfLink: /apis/apps/v1/namespaces/l2cr/deployments/botbosslion
+  uid: 44ed07f9-7282-45d6-8771-e13295c6f52f
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-l2cr-botbosslion
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-l2cr-botbosslion
+    spec:
+      containers:
+      - image: weltongbi/botboss
+        imagePullPolicy: Always
+        name: botbosslion
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+      dnsPolicy: ClusterFirst
+      nodeName: master
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30

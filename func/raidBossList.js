@@ -25,10 +25,17 @@ module.exports = [
         "Last Lesser Glaki",
         "Shuriel Fire Of Wrath",
         "Cherub Garacsia",
-    ], [
+        "Spike Stakato Qn Shyid",
         "Uruka",
         "Amber",
         "Varka Chief Horuth",
         "Varka Commnder Mos",
+        "Ketra Commander Tayr",
+        "Ketra Hero Hekaton",
+        "Ketra Chief Brakki",
+        "Bloody Priest Rudelto",
+        "Flame Stone Golem",
+    ], [
+              
     ]
 ]
