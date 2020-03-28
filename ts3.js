@@ -13,7 +13,7 @@ const idServer = process.env.BOT_ID_SERVER || 1;
 const epicBossChannel = process.env.BOT_TS3_BIGBOSSCHANNEL || 26;
 const raidBossChannel = process.env.BOT_TS3_MIDBOSSCHANNEL || 27;
 const bigRaidBossChannel = process.env.BOT_TS3_BIGBOSSCHANNEL || 33;
-const tenpo = process.env.BOT_TS3_TEMPO || 30000
+const tempo = process.env.BOT_TS3_TEMPO || 30000
 
 // Create a new bot with desired configuration (these are the default values)
 const ts3 = new TeamSpeak({
@@ -63,7 +63,7 @@ ts3.on("ready", async () => {
 
 		}
 		if (ret.msg === '!automatic') {
-			ts3.sendTextMessage(1, 3, 'Lista de boss enviada a cada 30s!');
+			ts3.sendTextMessage(1, 3, "Lista de boss enviada a cada " + (tempo / 1000) + "s!");
 
 			interval = setInterval(async () => {
 				const boss = await new lion();
