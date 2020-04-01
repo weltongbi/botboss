@@ -14,7 +14,6 @@ module.exports = [
         "Wdragon Priest Sheshark",
         "Antaras Cloe",
         "Krokian Padisha Sobekk",
-        "Benom",
         "Bloody Empress Decarbia",
         "Ipos The Death Lord",
         "Shax The Death Lord",
