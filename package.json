@@ -6,11 +6,11 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "chek": "^1.3.3",
-    "date-fns": "^2.2.1",
+    "date-fns": "^2.14.0",
     "request": "^2.88.2",
     "tabletojson": "^1.2.0",
     "tablur": "^1.2.1",
-    "ts3-nodejs-library": "^2.0.3-a"
+    "ts3-nodejs-library": "^2.4.4"
   },
   "devDependencies": {},
   "scripts": {

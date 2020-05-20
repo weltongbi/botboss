@@ -19,8 +19,8 @@ const tempo = process.env.BOT_TS3_TEMPO || 30000
 const ts3 = new TeamSpeak({
 	host: process.env.BOT_TS3_HOST || '177.44.128.98',
 	queryport: process.env.BOT_TS3_QUERYPORT || 30011,
-	username: process.env.BOT_TS3_USERNAME || 'BotBoss',
-	password: process.env.BOT_TS3_PASSWORD || 'it9mBJla2Ykx',
+	username: process.env.BOT_TS3_USERNAME || 'botLion',
+	password: process.env.BOT_TS3_PASSWORD || 'qidmlgoubt77',
 	keepAlive: true,
 });
 
